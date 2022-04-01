@@ -1,11 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import react from 'react';
-//import Quiz from './src/pages/Quiz';
-import Home from './src/pages/Home'
+import Routes from './src/routes/routes'
+
 
 export default function App() {
  return (
-   <Home />
+   <Routes />
  );
 };

@@ -1,51 +1,206 @@
 import React from 'react';
-import { View, Text, SafeAreaView, StatusBar } from 'react-native';
-import {CORES,SIZES} from '../../constants';
-import { useState } from 'react';
-import data from '../../data/perguntasQuiz'
+import { View, Text, SafeAreaView, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import {COLORS,SIZES} from '../../constants';
+import {useNavigation} from '@react-navigation/native';
 
 
-const Home = () => {
-    const allQuestions = data;
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState (0);
- 
-    const renderQuestion = () => {
-        return (
-            <View style={{
-                marginVertical: 40
-            }}>
-                {/* Question Counter */}
-                <View style={{
-                    flexDirection: 'row',
-                    alignItems: 'flex-end'
-                }}>
-                    <Text style={{color: COLORS.white, fontSize: 20, opacity: 0.6, marginRight: 2}}>{currentQuestionIndex+1}</Text>
-                    <Text style={{color: COLORS.white, fontSize: 18, opacity: 0.6}}>/ {allQuestions.length}</Text>
-                </View>
+export default function Home () {
 
-                {/* Question */}
-                <Text>Ola</Text>
-            </View>
-        )
-    }
-
+const nav = useNavigation ();
     return (
     <SafeAreaView style={{
-        flex:1
+        flex:1,
+        backgroundColor: COLORS.background,
         }}>
-            <StatusBar barStyle ='light-content' backgroundColor={CORES.cor1}/>
-            <View style= {{
-                flex:1,
-                paddingVertical: 40,
-                paddingHorizontal: 16,
-                backgroundColor: CORES.background,
-                position:'relative',
-            }}>
-                
-                {renderQuestion}
+            <View style={{
+                backgroundColor:COLORS.background,
+                width:'100%',
+                height:'100%',
+                alignItems:'center',
+                justifyContent:'space-evenly',
+                flexWrap:'wrap',
+                flexDirection:'row',}}>
+                <TouchableOpacity
+                    onPress={() => {nav.navigate('Provas')}} 
+                    style={{
+                    width:170,height:170,backgroundColor: COLORS.accent, padding: 20, borderRadius: 10, alignSelf:'center',
+                        }}>
+                    <Image
+                        source={require('../../image/iconBio.jpg')}
+                        style={{
+                            width:150,
+                            height:120,
+                            padding: 20,
+                            borderRadius: 10,
+                            alignSelf:'center',
+                            borderColor:COLORS.accent,
+                            opacity:0.9,
+                        }}
+                    />
+                    <Text style={{fontSize:15}}>
+                        Simulados
+                    </Text>
+                </TouchableOpacity>
 
-            </View>
+                <TouchableOpacity
+                    onPress={() => {nav.navigate('ProvaBiologia')}} 
+                    style={{
+                    width:170,height:170,backgroundColor: COLORS.accent, padding: 20, borderRadius: 10, alignSelf:'center',
+                        }}>
+                    <Image
+                        source={require('../../image/iconBiology.jpg')}
+                        style={{
+                            width:150,
+                            height:120,
+                            padding: 20,
+                            borderRadius: 10,
+                            alignSelf:'center',
+                            borderColor:COLORS.accent,
+                            opacity:0.9,
+                        }}
+                    />
+                    <Text style={{fontSize:15}}>
+                        Redação
+                    </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => {nav.navigate('ProvaArtes')}} 
+                    style={{
+                    width:170,height:170,backgroundColor: COLORS.accent, padding: 20, borderRadius: 10, alignSelf:'center',
+                        }}>
+                    <Image
+                        source={require('../../image/iconArt.jpg')}
+                        style={{
+                            width:150,
+                            height:120,
+                            padding: 20,
+                            borderRadius: 10,
+                            alignSelf:'center',
+                            borderColor:COLORS.accent,
+                            opacity:0.9,
+                        }}
+                    />
+                    <Text style={{fontSize:15}}>
+                        Compartilhar este APP
+                    </Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity
+                    onPress={() => {nav.navigate('Quiz')}} 
+                    style={{
+                        width:170,height:170,backgroundColor: COLORS.accent, padding: 20, borderRadius: 10, alignSelf:'center',
+                        }}>
+                    <Image
+                        source={require('../../image/iconArt.jpg')}
+                        style={{
+                            width:150,
+                            height:120,
+                            padding: 20,
+                            borderRadius: 10,
+                            alignSelf:'center',
+                            borderColor:COLORS.accent,
+                            opacity:0.9,
+                        }}
+                    />
+                    <Text style={{fontSize:15}}>
+                        O que estudar?
+                    </Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity
+                    onPress={() => {nav.navigate('HomeMaterias')}} 
+                    style={{
+                        width:170,height:170,backgroundColor: COLORS.accent, padding: 20, borderRadius: 10, alignSelf:'center',
+                        }}>
+                    <Image
+                        source={require('../../image/iconArt.jpg')}
+                        style={{
+                            width:150,
+                            height:120,
+                            padding: 20,
+                            borderRadius: 10,
+                            alignSelf:'center',
+                            borderColor:COLORS.accent,
+                            opacity:0.9,
+                        }}
+                    />
+                    <Text style={{fontSize:15}}>
+                        Resumo materias
+                    </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => {nav.navigate('ComoPassar')}} 
+                    style={{
+                        width:170,height:170,backgroundColor: COLORS.accent, padding: 20, borderRadius: 10, alignSelf:'center',
+                        }}>
+                    <Image
+                        source={require('../../image/iconArt.jpg')}
+                        style={{
+                            width:150,
+                            height:120,
+                            padding: 20,
+                            borderRadius: 10,
+                            alignSelf:'center',
+                            borderColor:COLORS.accent,
+                            opacity:0.9,
+                        }}
+                    />
+                    <Text style={{fontSize:15}}>
+                        Sobre os concursos
+                    </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => {nav.navigate('HomeMaterias')}} 
+                    style={{
+                        width:170,height:170,backgroundColor: COLORS.accent, padding: 20, borderRadius: 10, alignSelf:'center',
+                        }}>
+                    <Image
+                        source={require('../../image/iconArt.jpg')}
+                        style={{
+                            width:150,
+                            height:120,
+                            padding: 20,
+                            borderRadius: 10,
+                            alignSelf:'center',
+                            borderColor:COLORS.accent,
+                            opacity:0.9,
+                        }}
+                    />
+                    <Text style={{fontSize:15}}>
+                        Avaliar App
+                    </Text>
+                </TouchableOpacity>
+
+                <Image source={require('../../image/backgroundBiology2.jpg')}
+                style={{
+                    width: SIZES.width,
+                    height: '58%',
+                    zIndex: -1,
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 30,
+                    opacity: 0.5,
+                    borderRadius:50,
+                }}/>
+            </View>           
+
     </SafeAreaView>
     )
 };
-export default Home
+
+/*<Image
+                source={require('../assets/images/DottedBG.png')}
+                style={{
+                    width: SIZES.width,
+                    height: 130,
+                    zIndex: -1,
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    opacity: 0.5
+                }}*/
