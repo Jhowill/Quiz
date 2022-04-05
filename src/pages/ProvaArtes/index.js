@@ -130,27 +130,35 @@ const ProvaArtes = () => {
                     <TouchableOpacity 
                         style={{
                         alignItems:'center',
-                        backgroundColor: COLORS.accent,
+                        justifyContent:'center',
+                        backgroundColor: COLORS.white,
                         height:25,
                         width:25,
                         borderRadius:10,
-                        borderColor: COLORS.secundary}}
+                        borderWidth:2,
+                        borderColor: COLORS.primary}}
                         onPress={()=>{upSize()}}>
-                        <Text>+</Text>
+                        <Text style={{fontSize:20}}>+</Text>
+
                     </TouchableOpacity>
+
+                    <Text style={{fontSize:14
+                    }}> Fonte </Text>
 
                     <TouchableOpacity 
                         style={{
                         alignItems:'center',
-                        backgroundColor: COLORS.accent,
+                        justifyContent:'center',
+                        backgroundColor: COLORS.white,
                         height:25,
                         width:25,
                         borderRadius:10,
-                        borderColor: COLORS.secundary}}
+                        borderWidth:2,
+                        borderColor: COLORS.primary}}
                         onPress={()=>{downSize()}}>
-                        <Text>-</Text>
+                        <Text style={{fontSize:20}}>-</Text>
                     </TouchableOpacity>
-                    <Text style={{fontSize:12}}> Ajustar tamanho da fonte</Text>
+                    
                 </View>
                 {/* Question */}
                 <Text style={{

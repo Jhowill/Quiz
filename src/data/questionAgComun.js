@@ -1,23 +1,4 @@
-const data = [
-    {
-        question: "Seja a proposição: “Se hoje é sexta-feira, amanhã não estudarei”. A negação dessa afirmação é:",
-        options: ["A: Hoje não é sexta-feira e amanhã estudarei","B: Hoje é sexta-feira e amanhã estudarei","C: Se hoje é sexta-feira, amanhã estudarei","D: Se hoje não é sexta-feira, amanhã estudarei","E: Hoje não é sexta-feira ou amanhã estudarei."],
-        correct_option: "B: Hoje é sexta-feira e amanhã estudarei",
-    },
-
-    {
-        question: "Oito motoristas transportam 1000 caixas em 10 horas. Em quantas horas, dois motoristas transportam 400 caixas?",
-        options: ["A: 14 horas e meia","B: 15 horas","C: 15 horas e meia","D: 16 horas","E: 16 horas e meia"],
-        correct_option: "D: 16 horas",
-    },
-
-    {
-        question: "Observe a sequência. 4321  -  5555  -  6789  -  791113  . O próximo número na sequência é:",
-        options: ["A: 8101315","B: 9111417","C: 8111417","D: 9111315","E: 8111319"],
-        correct_option: "C: 8111417",
-    },
-
-    
+const data = [    
     {
         question: "A notificação compulsória é a principal fonte da vigilância epidemiológica, sendo conceituada pelo Ministério da Saúde como a comunicação da ocorrência de determinada doença ou agravo à saúde feita à autoridade sanitária por profissionais de saúde ou qualquer cidadão para fins de adoção de medidas de intervenção pertinentes. Nesse contexto, são doenças de notificação compulsória imediata até 24horas, EXCETO:",
         options: ["A: botulismo, cólera e dengue óbitos.","B: marburg, febre purpúrica brasileira e arenavírus","C: peste, raiva humana e síndrome da rubéola congênita","D: tuberculose, leptospirose e leishmaniose visceral.","E: antraz, tularemia e varíola."],

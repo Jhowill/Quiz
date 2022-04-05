@@ -7,7 +7,6 @@ import {useNavigation} from '@react-navigation/native'
 
 const ProvaBiologia = () => {
 
-
     useEffect(() => {
         sortRandomQuestions();
      } , [])
@@ -189,7 +188,7 @@ const ProvaBiologia = () => {
                             marginVertical: 10
                         }}
                         >
-                            <Text style={{fontSize: 15, color: COLORS.black}}>{option}</Text>
+                            <Text style={{fontSize: 18, color: COLORS.black}}>{option}</Text>
 
                             {/* Show Check Or Cross Icon based on correct answer*/}
                             {

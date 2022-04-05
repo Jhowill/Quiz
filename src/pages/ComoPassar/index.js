@@ -22,6 +22,8 @@ const ComoPassar = () => {
     const allMaterias = data;
 
     const Titles = allMaterias.map((titulo) => (
+
+    
         <TouchableOpacity
             onPress={() => {setShowScoreModal(true),setItenText(titulo.text), setItenText2(titulo.text2)}}
             style={{
@@ -34,11 +36,13 @@ const ComoPassar = () => {
             alignItems: 'center', 
             paddingHorizontal: 20,
             marginVertical: 10,
-            backgroundColor:COLORS.secundary,
+            backgroundColor:'#7EB2DD',
         }}>
             <Text>{titulo.title}</Text>
             
-        </TouchableOpacity>));
+        </TouchableOpacity>
+    
+        ));
 
     
     
@@ -93,7 +97,12 @@ const ComoPassar = () => {
                 </View>
                     
             </Modal>
-            </ScrollView>  
+            </ScrollView>
+            <View style={{
+                backgroundColor:COLORS.background,
+                width:'100%',
+                height: 125,
+            }}></View>  
         </SafeAreaView>
   );
 };

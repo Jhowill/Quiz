@@ -6,11 +6,6 @@ import data from '../../data/materiasBiology';
 import {useState} from 'react';
 //import data from '../../data/dicasCalouros'
 
-
-
-
-
-
 const Materias = () => {
 
 
@@ -34,7 +29,7 @@ const Materias = () => {
             alignItems: 'center', 
             paddingHorizontal: 20,
             marginVertical: 10,
-            backgroundColor:COLORS.secundary,
+            backgroundColor:'#7EB2DD',
         }}>
             <Text>{titulo.title}</Text>
             
