@@ -2,13 +2,17 @@ import React from 'react';
 import { View, Text, SafeAreaView, Image, TouchableOpacity,ScrollView } from 'react-native';
 import {COLORS,SIZES} from '../../constants';
 import {useNavigation} from '@react-navigation/native';
-
+import {useContext} from 'react';
+import UserContext from '../../Context';
+import TouchHome from '../../components/touchHome';
+import TouchHome2 from '../../components/TouchHome2';
 
 
 export default function Home () {
 
 
     const nav = useNavigation ();
+    const {user} = useContext (UserContext);
 
 
     return (
@@ -18,7 +22,6 @@ export default function Home () {
         }}>
         <ScrollView>
             <View style={{
-                flex:1,
                 backgroundColor:'#FFCB77',
                 alignItems:'center',
                 justifyContent:'space-evenly',
@@ -26,269 +29,52 @@ export default function Home () {
                 flexDirection:'row',
                 padding:10}}>
 
-                    <Text>Ola Jhow</Text>
+                    <Text style={{fontSize:48}}>Ola {user}</Text>
                     
                 </View>
 
             <View style={{
+                width: '100%',
+                height:'100%',
                 backgroundColor:COLORS.background,
-                flex:2,
                 alignItems:'center',
-                justifyContent:'space-evenly',
+                justifyContent:'space-around',
                 flexWrap:'wrap',
                 flexDirection:'row',
-                padding:10,
+                padding:30 ,
                 }}>
 
-                    
-                <TouchableOpacity
-                    onPress={() => {nav.navigate('Provas')}} 
-                    style={{
-                    width:170,
-                    height:220,
-                    backgroundColor: COLORS.white, 
-                    padding: 10, 
-                    borderRadius: 35, 
-                    alignSelf:'center', 
-                    alignItems:'center',
-                    justifyContent:'space-around',
-                    borderColor:COLORS.accent,
-                    borderWidth:1,
-                    }}>
-                    <Image
-                        source={require('../../image/iconProva.jpg')}
-                        style={{
-                            width:120,
-                            height:120,
-                            padding: 20,
-                            borderRadius: 10,
-                            alignSelf:'center',
-                            borderColor:COLORS.accent,
-                            opacity:0.9,
-                        }}
-                    />
-                    <Text style={{fontSize:15}}>
-                        Provas
-                    </Text>
-                </TouchableOpacity>
+                <TouchHome 
+                    text='Provas' 
+                    onpress={() => {nav.navigate('Provas')}} 
+                    img={require('../../image/iconProva.jpg')}/>
 
-                <TouchableOpacity
-                    onPress={() => {nav.navigate('ProvaBiologia')}} 
-                    style={{
-                    width:170,
-                    height:170,
-                    backgroundColor: COLORS.white, 
-                    padding: 10, 
-                    borderRadius: 35, 
-                    alignSelf:'center', 
-                    alignItems:'center',
-                    justifyContent:'space-around',
-                    borderColor:COLORS.accent,
-                    borderWidth:1,
-                        }}>
-                    <Image
-                        source={require('../../image/iconConcurso.jpg')}
-                        style={{
-                            width:150,
-                            height:120,
-                            padding: 20,
-                            borderRadius: 10,
-                            alignSelf:'center',
-                            borderColor:COLORS.accent,
-                            opacity:0.9,
-                        }}
-                    />
-                    <Text style={{fontSize:15}}>
-                        Concursos
-                    </Text>
-                </TouchableOpacity>
+                <TouchHome2 
+                    text='Concurso'
+                    onpress={() => {nav.navigate('')}}
+                    img={require('../../image/iconConcurso.jpg')}/>
 
-                <TouchableOpacity
-                    onPress={() => {nav.navigate('ProvaBiologia')}} 
-                    style={{
-                    width:170,
-                    height:170,
-                    backgroundColor: COLORS.white, 
-                    padding: 10, 
-                    borderRadius: 35, 
-                    alignSelf:'center', 
-                    alignItems:'center',
-                    justifyContent:'space-around',
-                    borderColor:COLORS.accent,
-                    borderWidth:1,
-                        }}>
-                    <Image
-                        source={require('../../image/iconRedacao.jpg')}
-                        style={{
-                            width:150,
-                            height:120,
-                            padding: 20,
-                            borderRadius: 10,
-                            alignSelf:'center',
-                            borderColor:COLORS.accent,
-                            opacity:0.9,
-                        }}
-                    />
-                    <Text style={{fontSize:15}}>
-                        Redação
-                    </Text>
-                </TouchableOpacity>
+                <TouchHome 
+                    text='Como Passar' 
+                    onpress={() => {nav.navigate('ComoPassar')}} 
+                    img={require('../../image/iconEstudar.png')}/>
 
-                <TouchableOpacity
-                    onPress={() => {nav.navigate('HomeMaterias')}} 
-                    style={{
-                    width:170,
-                    height:220,
-                    backgroundColor: COLORS.white, 
-                    padding: 10, 
-                    borderRadius: 35, 
-                    alignSelf:'center', 
-                    alignItems:'center',
-                    justifyContent:'space-around',
-                    borderColor:COLORS.accent,
-                    borderWidth:1,
-                    }}>
-                    <Image
-                        source={require('../../image/iconMaterias.jpg')}
-                        style={{
-                            width:120,
-                            height:120,
-                            padding: 20,
-                            borderRadius: 10,
-                            alignSelf:'center',
-                            borderColor:COLORS.accent,
-                            opacity:0.9,
-                        }}
-                    />
-                    <Text style={{fontSize:15}}>
-                        Materias
-                    </Text>
-                </TouchableOpacity>
+                <TouchHome2 
+                    text='Materias'
+                    onpress={() => {nav.navigate('HomeMaterias')}}
+                    img={require('../../image/iconMaterias.jpg')} />
 
-                <TouchableOpacity
-                    onPress={() => {nav.navigate('Provas')}} 
-                    style={{
-                    width:180,
-                    height:200,
-                    backgroundColor: COLORS.white, 
-                    padding: 10, 
-                    borderRadius: 35, 
-                    alignSelf:'center', 
-                    alignItems:'center',
-                    justifyContent:'space-around',
-                    borderColor:COLORS.accent,
-                    borderWidth:1,
-                    }}>
-                    <Image
-                        source={require('../../image/iconProva.jpg')}
-                        style={{
-                            width:120,
-                            height:120,
-                            padding: 20,
-                            borderRadius: 10,
-                            alignSelf:'center',
-                            borderColor:COLORS.accent,
-                            opacity:0.9,
-                        }}
-                    />
-                    <Text style={{fontSize:15}}>
-                        Provas
-                    </Text>
-                </TouchableOpacity>
+                <TouchHome 
+                    text='Como Passar' 
+                    onpress={() => {nav.navigate('ComoPassar')}} 
+                    img={require('../../image/iconEstudar.png')}/>
 
-                <TouchableOpacity
-                    onPress={() => {nav.navigate('ProvaBiologia')}} 
-                    style={{
-                    width:170,
-                    height:170,
-                    backgroundColor: COLORS.white, 
-                    padding: 10, 
-                    borderRadius: 35, 
-                    alignSelf:'center', 
-                    alignItems:'center',
-                    justifyContent:'space-around',
-                    borderColor:COLORS.accent,
-                    borderWidth:1,
-                        }}>
-                    <Image
-                        source={require('../../image/iconConcurso.jpg')}
-                        style={{
-                            width:150,
-                            height:120,
-                            padding: 20,
-                            borderRadius: 10,
-                            alignSelf:'center',
-                            borderColor:COLORS.accent,
-                            opacity:0.9,
-                        }}
-                    />
-                    <Text style={{fontSize:15}}>
-                        Concursos
-                    </Text>
-                </TouchableOpacity>
+                <TouchHome2 
+                    text='Materias'
+                    onpress={() => {nav.navigate('HomeMaterias')}}
+                    img={require('../../image/iconMaterias.jpg')} />
+             
 
-                <TouchableOpacity
-                    onPress={() => {nav.navigate('ProvaBiologia')}} 
-                    style={{
-                    width:170,
-                    height:170,
-                    backgroundColor: COLORS.white, 
-                    padding: 10, 
-                    borderRadius: 35, 
-                    alignSelf:'center', 
-                    alignItems:'center',
-                    justifyContent:'space-around',
-                    borderColor:COLORS.accent,
-                    borderWidth:1,
-                        }}>
-                    <Image
-                        source={require('../../image/iconRedacao.jpg')}
-                        style={{
-                            width:150,
-                            height:120,
-                            padding: 20,
-                            borderRadius: 10,
-                            alignSelf:'center',
-                            borderColor:COLORS.accent,
-                            opacity:0.9,
-                        }}
-                    />
-                    <Text style={{fontSize:15}}>
-                        Redação
-                    </Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    onPress={() => {nav.navigate('HomeMaterias')}} 
-                    style={{
-                    width:180,
-                    height:200,
-                    backgroundColor: COLORS.white, 
-                    padding: 10, 
-                    borderRadius: 35, 
-                    alignSelf:'center', 
-                    alignItems:'center',
-                    justifyContent:'space-around',
-                    borderColor:COLORS.accent,
-                    borderWidth:1,
-                    }}>
-                    <Image
-                        source={require('../../image/iconMaterias.jpg')}
-                        style={{
-                            width:120,
-                            height:120,
-                            padding: 20,
-                            borderRadius: 10,
-                            alignSelf:'center',
-                            borderColor:COLORS.accent,
-                            opacity:0.9,
-                        }}
-                    />
-                    <Text style={{fontSize:15}}>
-                        Materias
-                    </Text>
-                </TouchableOpacity>
-                
             </View>
                       
             </ScrollView>
@@ -296,7 +82,7 @@ export default function Home () {
                 backgroundColor:COLORS.background,
                 width:'100%',
                 height: 125,
-            }}></View> 
+            }}/>
     </SafeAreaView>
     )
 };

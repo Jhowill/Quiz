@@ -1,19 +1,48 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, } from 'react'
 import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, Animated, ScrollView } from 'react-native'
 import { COLORS, SIZES } from '../../constants';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import data from '../../data/biologiaQuestions'
-import {useNavigation} from '@react-navigation/native'
+import data1 from '../../data/biologiaQuestions'
+import {useNavigation, useRoute} from '@react-navigation/native'
+import dataArtes from '../../data/artesQuestions'
 
-const Quiz = () => {
 
 
-    useEffect(() => {
-        sortRandomQuestions();
+
+const Quiz = ({route}) => {
+
+
+     useEffect(() => {
+        sortRandomQuestions()
+        escolhaProva();
+        
      } , [])
- 
-     function sortRandomQuestions(){
-         const arr = data;
+
+     useEffect(() => {
+
+        sortRandomQuestions()
+        console.log(selectdata)
+     } , [selectdata])
+
+
+     const escolhaprova = route.params?.data
+    
+
+    function escolhaProva ()  {
+        
+       console.log(escolhaprova) 
+        if (escolhaprova == 'Artes'){
+            setData (data1);
+                        
+        }
+        else { setData (dataArtes)}
+                
+    }
+    
+
+
+    function sortRandomQuestions(){
+         const arr = selectdata;
          //console.log('total de perguntas' + arr.length)
                  //Código para ordenar o Array de forma aletória
                  for (let i = 0; i < arr.length; i++) {
@@ -23,7 +52,12 @@ const Quiz = () => {
                  }
  
                  setNumbAleatorio(arr.slice(0,10));}
-
+                 
+    // const route = useRoute ();
+    // const {selectData} = route.params;
+    // console.log (selectData)
+    
+    
 
     const [numbAleatorio, setNumbAleatorio] = useState ([]);
     const allQuestions = numbAleatorio;
@@ -36,7 +70,7 @@ const Quiz = () => {
     const [showScoreModal, setShowScoreModal] = useState(false);
     const [tamanhoFont, setTamanhoFonte] = useState (16);
     const nav = useNavigation ();
-
+    const [selectdata, setData] = useState([]);
 
     {/*Tamanho fontSize + */}
     const upSize =() => {
@@ -118,6 +152,7 @@ const Quiz = () => {
                     
                     <Text style={{color: COLORS.black, fontSize: 16, opacity: 0.6, marginRight: 2}}>{currentQuestionIndex+1}</Text>
                     <Text style={{color: COLORS.black, fontSize: 14, opacity: 0.6}}>/ {allQuestions.length}</Text>
+                    <Text>{route.params?.data}</Text>
                 </View>
 
                 {/* fontSize */}
@@ -130,13 +165,12 @@ const Quiz = () => {
                     <TouchableOpacity 
                         style={{
                         alignItems:'center',
-                        backgroundColor: COLORS.accent,
                         height:25,
                         width:25,
                         borderRadius:10,
                         borderColor: COLORS.secundary}}
                         onPress={()=>{upSize()}}>
-                        <Text>+</Text>
+                        <Text style={{fontSize:25}}>+</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity 
@@ -148,9 +182,9 @@ const Quiz = () => {
                         borderRadius:10,
                         borderColor: COLORS.secundary}}
                         onPress={()=>{downSize()}}>
-                        <Text>-</Text>
+                        <Text style={{fontSize:25}}>-</Text>
                     </TouchableOpacity>
-                    <Text style={{fontSize:12}}> Ajustar tamanho da fonte</Text>
+                    <Text style={{fontSize:16}}> Ajustar tamanho da fonte</Text>
                 </View>
                 {/* Question */}
                 <Text style={{
@@ -189,7 +223,7 @@ const Quiz = () => {
                             marginVertical: 10
                         }}
                         >
-                            <Text style={{fontSize: 15, color: COLORS.black}}>{option}</Text>
+                            <Text style={{fontSize: tamanhoFont, color: COLORS.black}}>{option}</Text>
 
                             {/* Show Check Or Cross Icon based on correct answer*/}
                             {

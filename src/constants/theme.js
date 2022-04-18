@@ -14,6 +14,11 @@ export const COLORS ={
     blackOpc:"rgba(0,0,0,0.7)",
     white: "#ffffff",
     background:"#E3E6FA",
+
+    backTouch:"#af2",
+    backTouch2:"#af2f2f",
+    backTouch3:"#af22",
+    backTouch4:"#334a78",
 }
 
 export const SIZES = {

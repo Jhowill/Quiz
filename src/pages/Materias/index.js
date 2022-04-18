@@ -1,13 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView, Image, Modal } from 'react-native';
+import { View, Text, TouchableOpacity, SafeAreaView, Image, Modal,ScrollView } from 'react-native';
 import {COLORS,SIZES} from '../../constants';
 import {useNavigation} from '@react-navigation/native';
 import data from '../../data/materiasBiology';
 import {useState} from 'react';
-//import data from '../../data/dicasCalouros'
 
 const Materias = () => {
-
 
     const [showScoreModal, setShowScoreModal] = useState(false);
     const [itenText, setItenText] = useState ();
@@ -17,12 +15,14 @@ const Materias = () => {
     const allMaterias = data;
 
     const Titles = allMaterias.map((titulo) => (
+
+    
         <TouchableOpacity
             onPress={() => {setShowScoreModal(true),setItenText(titulo.text), setItenText2(titulo.text2)}}
             style={{
             width:'90%',
             borderWidth: 4,
-            height: 50,
+            height: '10%',
             padding:5, 
             borderRadius: 15,
             flexDirection: 'row',
@@ -32,8 +32,14 @@ const Materias = () => {
             backgroundColor:'#7EB2DD',
         }}>
             <Text>{titulo.title}</Text>
-            
-        </TouchableOpacity>));
+        </TouchableOpacity>
+
+        // <TouchList onpress = {()=> {setShowScoreModal(true), setItenText(titulo.text), setItenText2(titulo.text2)}}>
+        //     <Text>{titulo.title}</Text>
+        //    </TouchList>
+        
+    
+        ));
 
     
     
@@ -43,8 +49,10 @@ const Materias = () => {
             flex:1,
             backgroundColor: COLORS.background,
             }}>
+                <ScrollView>
 
             <View style={{
+                flex: 1,
                 alignItems:'center',
                 justifyContent:'space-around',
                 flexWrap:'wrap',
@@ -61,7 +69,7 @@ const Materias = () => {
             >
                 <View style={{
                     flex: 1,
-                    backgroundColor: COLORS.background,
+                    backgroundColor: COLORS.primary,
                     alignItems: 'center',
                     justifyContent: 'space-around'
                 }}>
@@ -84,7 +92,13 @@ const Materias = () => {
                         </TouchableOpacity>                               
                 </View>
                     
-            </Modal>  
+            </Modal>
+            </ScrollView>
+            <View style={{
+                backgroundColor:COLORS.background,
+                width:'100%',
+                height: 125,
+            }}></View>  
         </SafeAreaView>
   );
 };

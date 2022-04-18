@@ -1,5 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack'
 import NavRoutes from './routes';
+import Cadastro from '../pages/Cadastro';
 
 function initRoutes () {
 
@@ -11,13 +12,13 @@ function initRoutes () {
             <stack.Screen 
                 name="Cadastro"
                 component={Cadastro}
-                options={{headerShown: true}}
+                options={{headerShown: false}}
             />
 
             <stack.Screen 
                 name="NavRoutes"
                 component={NavRoutes}
-                options={{headerShown: true}}
+                options={{headerShown: false}}
             />
        </stack.Navigator>
    )

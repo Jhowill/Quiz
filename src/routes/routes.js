@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome } from '@expo/vector-icons';
 
-import Cadastro from '../pages/Cadastro';
+
 import Home from '../pages/Home';
 import Quiz from '../pages/Quiz';
 import ProvaBiologia from '../pages/ProvaBiologia';
@@ -23,10 +23,10 @@ export default function NavRoutes(){
   function HomeTabs() {
       return (
         <Tab.Navigator 
-          tabBarOptions={{showLabel:false}} initialRouteName={Home}         
+           initialRouteName={Home}         
           >
 
-          <Tab.Screen name="Home" component={Home} options={{headerShown:false, 
+          <Tab.Screen name="Home" component={Home} options={{headerShown:false, tabBarShowLabel:false,
           tabBarStyle:{
             position:'absolute',
             bottom:20,
@@ -93,12 +93,6 @@ export default function NavRoutes(){
                  component={HomeTabs}
                  options={{headerShown: false}}
                />
-
-                <Screen 
-                 name="Cadastro"
-                 component={Cadastro}
-                 options={{headerShown: false}}
-              /> 
 
                 <Screen 
                  name="Quiz"

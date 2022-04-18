@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, Text, SafeAreaView, Image, TouchableOpacity,ScrollView } from 'react-native';
 import {COLORS,SIZES} from '../../constants';
 import {useNavigation} from '@react-navigation/native';
+//import data from '../../data/biologiaQuestions';
+
+
 
 
 
@@ -9,6 +12,15 @@ export default function HomeMaterias () {
 
 
     const nav = useNavigation ();
+    const [selectData, setData] = useState();
+
+     function navDataBio () {
+         nav.navigate('Quiz',{data:'k'})
+
+    }
+    
+   
+
 
 
     return (
@@ -42,7 +54,7 @@ export default function HomeMaterias () {
 
                     
                 <TouchableOpacity
-                    onPress={() => {nav.navigate('Materias')}} 
+                    onPress={() => (navDataBio())}
                     style={{
                     width:180,
                     height:200,
@@ -73,7 +85,7 @@ export default function HomeMaterias () {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => {nav.navigate('ProvaBiologia')}} 
+                    onPress={() => {navDataBio()}} 
                     style={{
                     width:170,
                     height:170,
@@ -104,7 +116,7 @@ export default function HomeMaterias () {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => {nav.navigate('ProvaBiologia')}} 
+                    onPress={() => {navDataBio('Geografia')}} 
                     style={{
                     width:170,
                     height:170,
@@ -135,7 +147,7 @@ export default function HomeMaterias () {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => {nav.navigate('Provas')}} 
+                    onPress={() => {navDataBio('Biologia')}} 
                     style={{
                     width:180,
                     height:200,
@@ -166,7 +178,7 @@ export default function HomeMaterias () {
                 </TouchableOpacity>
                 
                 <TouchableOpacity
-                    onPress={() => {nav.navigate('Materias')}} 
+                    onPress={() => {navDataBio('Português')}} 
                     style={{
                     width:180,
                     height:200,
@@ -197,7 +209,7 @@ export default function HomeMaterias () {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => {nav.navigate('ProvaBiologia')}} 
+                    onPress={() => {navDataBio('Química')}} 
                     style={{
                     width:170,
                     height:170,
@@ -228,7 +240,7 @@ export default function HomeMaterias () {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => {nav.navigate('ProvaBiologia')}} 
+                    onPress={() => {navDataBio('História')}} 
                     style={{
                     width:170,
                     height:170,
@@ -259,7 +271,7 @@ export default function HomeMaterias () {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => {nav.navigate('Provas')}} 
+                    onPress={() => {navDataBio('Física')}} 
                     style={{
                     width:180,
                     height:200,

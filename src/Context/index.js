@@ -8,7 +8,7 @@ export const UserProvider = ({children}) => {
     const [loading, setLoading] = useState (true);
 
     useEffect (() =>{
-        
+
         const loadStorageData = async () =>{
             const storageUser = await AsyncStorage.getItem('@Quiz:user');
 

@@ -5,14 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import data from '../../data/materiasBiology';
 import {useState} from 'react';
 
-//import data from '../HomeMaterias'
-
-
-
-
-
 const ComoPassar = () => {
-
 
     const [showScoreModal, setShowScoreModal] = useState(false);
     const [itenText, setItenText] = useState ();
@@ -39,8 +32,11 @@ const ComoPassar = () => {
             backgroundColor:'#7EB2DD',
         }}>
             <Text>{titulo.title}</Text>
-            
         </TouchableOpacity>
+
+        // <TouchList onpress = {()=> {setShowScoreModal(true), setItenText(titulo.text), setItenText2(titulo.text2)}}
+        //    text={titulo.title}
+        // />
     
         ));
 
